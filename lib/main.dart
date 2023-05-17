@@ -6,6 +6,7 @@
 
 
 import "package:flutter/material.dart";
+import "package:flutter_practica/pages/pagina02.dart";
 
 void main() => runApp(MiApp());
 
@@ -39,7 +40,15 @@ class _InicioState extends State<Inicio> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Home")
+            Text(
+              "Home",
+            ),
+            ElevatedButton(
+              onPressed: ()=>{
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Pagina02()))
+              }, 
+              child: Text("Ir a la otra página"))
           ],
         ),
       ),
