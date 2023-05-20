@@ -21,34 +21,61 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
         elevation: 0,
       ),
-      body: const Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      body:  Column(
         children: [
           Column(
             children: [
-              Text('Suma'),
-              Row(
-                children: [
-                  TextField(
-                    decoration: InputDecoration(
-                      hintText: "Suma",
-                    ),
-                  ),
-                  Text('Texto2')
-                ],
-              ),
+              campoSuma(),
             ],
           ),
-          
-          Column (
-             children: [
-              Text('Resta')
-            ]
-          )
         ],
       ),
+   
+      
     );
     
   }
 }
 
+
+Widget campoSuma() {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      Container(
+        child: Column(
+          children: const[
+            Text('Suma'),
+            Row(
+              children: [
+                Flexible(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Numero uno",
+                      fillColor: Colors.black45
+                    ),
+                  ),
+                )
+              ],
+            ),
+            Text('Resultado:')
+          ],
+          ),
+      ),
+      Container(
+        child: Column(
+          children: const[
+            Text('Resta'),
+            Row(
+              children: [
+                Text('Numero uno'), 
+                Text('Numero dos')
+              ],
+            ),
+            Text('Resultado:')
+          ],
+          ),
+      )
+    ],
+  );
+}

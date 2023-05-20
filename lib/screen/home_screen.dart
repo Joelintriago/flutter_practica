@@ -17,39 +17,26 @@ class HomeScreen extends StatelessWidget{
         ),
         elevation: 0,
       ),
-      body: Center(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisSize: MainAxisSize.min,
-                children: [Text('Monthly Membership'), Text('Subscription')],
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisSize: MainAxisSize.min,
+      body: Row(
+        children: const[
+          Flexible(
+            child: Row(
               children: [
-                Text(
-                  '+100',
-                  maxLines: 1,
-                  softWrap: false,
-                  overflow: TextOverflow.fade,
+                Flexible(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: "Numero uno",
+                      fillColor: Colors.white,
+                      filled: false
+                    ),
+                  ),
                 ),
-                Text(
-                  '18 Sept 2021',
-                  maxLines: 1,
-                  softWrap: false,
-                  overflow: TextOverflow.fade,
-                ),
+                Text('Hola'),
+                Text('Vamos')
               ],
-            ),
-          ],
-        ),
+            )
+          )
+        ],
       ),
     );
   }
