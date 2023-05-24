@@ -21,61 +21,112 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
         elevation: 0,
       ),
-      body:  Column(
-        children: [
-          Column(
-            children: [
-              campoSuma(),
-            ],
-          ),
-        ],
+      body: Container(
+        child: Column(
+          children: [
+            Expanded(
+              child: Row(
+                children:  [
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: FractionallySizedBox(
+                        widthFactor: 1,
+                         heightFactor: 1,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 1.0,
+                            )
+                          ),
+                          child: Column(
+                            children:const [
+                              Text(
+                                'Suma',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: FractionallySizedBox(
+                        widthFactor: 1,
+                        heightFactor: 1,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.black,
+                              width: 1.0,
+                            )
+                          ),
+                          child: Column(
+                            children: const[
+                              Text(
+                                'Resta',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Row(
+                                children: [
+                                  Flexible(
+                                    child: TextField(
+                                      decoration: InputDecoration(
+                                        hintText: 'Uno'
+                                      ),
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Text(
+                                      '-',
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: TextField(),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            Expanded(child: 
+              Row(
+                children: [
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 1.0
+                        )
+                      ),
+                      child: Column(
+                        children: const[
+                          Text('Division')
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )
+            )
+          ],
+        ),
       ),
-   
-      
     );
     
   }
 }
 
 
-Widget campoSuma() {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: [
-      Container(
-        child: Column(
-          children: const[
-            Text('Suma'),
-            Row(
-              children: [
-                Flexible(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      hintText: "Numero uno",
-                      fillColor: Colors.black45
-                    ),
-                  ),
-                )
-              ],
-            ),
-            Text('Resultado:')
-          ],
-          ),
-      ),
-      Container(
-        child: Column(
-          children: const[
-            Text('Resta'),
-            Row(
-              children: [
-                Text('Numero uno'), 
-                Text('Numero dos')
-              ],
-            ),
-            Text('Resultado:')
-          ],
-          ),
-      )
-    ],
-  );
-}

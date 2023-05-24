@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practica/screen/counter_screen.dart';
 import 'package:flutter_practica/screen/home_screen.dart';
+//import 'package:flutter_practica/screen/home_screen.dart';
 
 
 void main() {
@@ -15,8 +16,8 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: HomeScreen( )
-      home: CounterScreen(),
+      home: HomeScreen(),
+      //home: CounterScreen(),
     );
   }
 }
